@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CarePlus Clinic | Quality Healthcare For Every Family</title>
+    <meta name="description" content="CarePlus Clinic is a premium local family healthcare center with certified doctors, modern diagnostic facilities, and patient-focused medical care.">
+    
+    <!-- Google Fonts: Inter & Outfit for Clean, Accessible, Readable Medical Aesthetics -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome v6.4.0 for Medical Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        meddark: '#0f172a',      // Trustworthy Slate Navy
+                        medblue: '#1e3a8a',      // Medical Royal Blue
+                        medlight: '#f8fafc',     // Clean Soft Clinical White
+                        medaccent: '#2563eb',    // Active Medical Accent Blue
+                        medgreen: '#10b981',     // Soft Healing Green (Success States)
+                        medborder: '#e2e8f0',    // Light Minimal Slate Border
+                        medtext: '#334155',      // Soft Slate Text
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        outfit: ['Outfit', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        /* Custom Fine scrollbar representing clean clinical layout */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #2563eb;
+        }
+
+        /* SPA Virtual Page Layout Animations */
+        .page-transition {
+            transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+        }
+        .page-hidden {
+            opacity: 0;
+            transform: scale(0.995) translateY(4px);
+            pointer-events: none;
+            position: absolute;
+            width: 100%;
+            height: 0;
+            overflow: hidden;
+        }
+        .page-active {
+            opacity: 1;
+            transform: scale(1) translateY(0);
+            pointer-events: auto;
+            position: relative;
+            height: auto;
+        }
+
+        /* Realistic Medical Card Shadows */
+        .med-card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .med-card:hover {
+            border-color: #93c5fd;
+            box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.1), 0 4px 6px -2px rgba(37, 99, 235, 0.05);
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body class="bg-medlight text-medtext font-sans flex flex-col min-h-screen antialiased selection:bg-medaccent selection:text-white">
+
+    <!-- Emergency Notification & Fast Dial Desk -->
+    <div class="bg-red-600 text-white text-[12px] py-2.5 px-4 font-semibold relative z-50 shadow-md">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-2">
+            <div class="flex items-center gap-3 flex-wrap justify-center uppercase tracking-wide">
+                <span class="flex items-center gap-1.5"><i class="fa-solid fa-heart-pulse animate-bounce"></i> 24/7 Ambulance Hotline: +91 99887 76655</span>
+                <span class="hidden md:inline text-red-200">|</span>
+                <span class="flex items-center gap-1.5"><i class="fa-solid fa-circle-info"></i> Pharmacy Open Today till 10:00 PM</span>
+            </div>
+            <div class="flex items-center gap-4 text-[12px] tracking-wide">
+                <span id="live-er-notice" class="flex items-center gap-1.5 text-emerald-300 font-bold">
+                    <span class="w-2.5 h-2.5 bg-emerald-400 rounded-full animate-ping"></span> ER Beds Available
+                </span>
+                <span class="text-red-200 hidden md:inline">|</span>
+                <a href="tel:+919876543210" class="hover:underline transition-colors"><i class="fa-solid fa-phone mr-1"></i> Reception Desk: 033-2576-908
